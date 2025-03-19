@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: webhook-server-service
-  namespace: webhook-namespace
+  namespace: webhook
 spec:
   selector:
     app: webhook-server

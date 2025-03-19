@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: webhook-server
-  namespace: webhook-namespace
+  namespace: webhook
 spec:
   replicas: 1
   selector:
