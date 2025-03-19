@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: webhook-server
-        image: artifactory.artifactory.svc.cluster.local/pqrst/webhook-server:latest
+        image: artifactory.artifactory.svc.artifactory.cluster.local/pqrst/webhook-server:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
