@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: webhook-server
-        image: http://ab9a87c1203ed4b7ea8a4b80d75f6b1c-1494511120.us-west-2.elb.amazonaws.com/artifactory/temptesting/webhook-server/latest/
+        image: ab9a87c1203ed4b7ea8a4b80d75f6b1c-1494511120.us-west-2.elb.amazonaws.com/pqrst/webhook-server:latest  # Removed trailing /
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
