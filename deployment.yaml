@@ -15,7 +15,8 @@ spec:
     spec:
       containers:
       - name: webhook-server
-        image: <aws_account_id>.dkr.ecr.<region>.amazonaws.com/webhook-server:latest  # Replace with actual image
+        image: webhook-server:latest # Replace with actual image
+        imagePullPolicy: Never
         ports:
         - containerPort: 5000
         env:
