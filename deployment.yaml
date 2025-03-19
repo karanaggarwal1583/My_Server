@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: webhook-server
-        image: ab9a87c1203ed4b7ea8a4b80d75f6b1c-1494511120.us-west-2.elb.amazonaws.com/temptesting/the_app:pehla
+        image: artifactory.artifactory/temptesting/the_app:pehla
         ports:
         - containerPort: 5000
         env:
