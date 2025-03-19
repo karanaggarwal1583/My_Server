@@ -15,7 +15,8 @@ spec:
     spec:
       containers:
       - name: webhook-server
-        image: artifactory.artifactory/temptesting/the_app:pehla
+        image: http://ab9a87c1203ed4b7ea8a4b80d75f6b1c-1494511120.us-west-2.elb.amazonaws.com/artifactory/temptesting/webhook-server/latest/
+        imagePullPolicy: Always
         ports:
         - containerPort: 5000
         env:
@@ -29,5 +30,5 @@ spec:
             secretKeyRef:
               name: email-credentials
               key: EMAIL_PASSWORD
-
-
+      imagePullSecrets:
+      - name: jfrog-regcred
