@@ -31,4 +31,4 @@ spec:
               name: email-credentials
               key: EMAIL_PASSWORD
       imagePullSecrets:
-      - name: jfrog-regcred
+      - name: artifactory-secret
