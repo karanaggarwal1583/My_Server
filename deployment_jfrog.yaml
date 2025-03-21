@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webhook-server-jfrog
+  namespace: webhook
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webhook-server-jfrog
+  template:
+    metadata:
+      labels:
+        app: webhook-server-jfrog
+    spec:
+      containers:
+        - name: webhook-server
+          image: ab9a87c1203ed4b7ea8a4b80d75f6b1c-1494511120.us-west-2.elb.amazonaws.com:443/pqrst/webhook-server:latest
+          ports:
+            - containerPort: 5000
+          env:
+            - name: EMAIL_ADDRESS
+              valueFrom:
+                secretKeyRef:
+                  name: email-credentials
+                  key: EMAIL_ADDRESS
+            - name: EMAIL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: email-credentials
+                  key: EMAIL_PASSWORD
+      imagePullSecrets:
+        - name: artifactory-secret
