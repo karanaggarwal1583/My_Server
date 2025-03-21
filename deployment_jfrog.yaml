@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: webhook-server
-          image: ab9a87c1203ed4b7ea8a4b80d75f6b1c-1494511120.us-west-2.elb.amazonaws.com:443/pqrst/webhook-server:latest
+          image: 10.100.242.134:8081/pqrst/webhook-server:latest
           ports:
             - containerPort: 5000
           env:
