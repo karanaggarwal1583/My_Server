@@ -30,4 +30,4 @@ spec:
                   name: email-credentials
                   key: EMAIL_PASSWORD
       imagePullSecrets:
-        - name: artifactory-secret
+        - name: artifactory-secret-new
