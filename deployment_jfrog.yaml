@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: webhook-server
-          image: "http://10.100.242.134:8081/pqrst/webhook-server:latest"
+          image: 10.100.242.134:8081/pqrst/webhook-server:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 5000
