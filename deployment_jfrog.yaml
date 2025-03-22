@@ -16,7 +16,7 @@ spec:
       containers:
         - name: webhook-server
           image: 10.100.242.134:8081/pqrst/webhook-server:latest
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5000
           env:
