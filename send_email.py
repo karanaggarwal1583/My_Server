@@ -1,51 +1,51 @@
-# import smtplib
-# from email.message import EmailMessage
+# # import smtplib
+# # from email.message import EmailMessage
 
-# # Set up email details
-# sender_email = "karanagg1001@gmail.com"
-# sender_password = "tjlldxzkqfxybtgz"  # Generate from Google App Passwords
-# recipient_email = "karanagg2002@gmail.com"
+# # # Set up email details
+# # sender_email = "karanagg1001@gmail.com"
+# # sender_password = "tjlldxzkqfxybtgz"  # Generate from Google App Passwords
+# # recipient_email = "karanagg2002@gmail.com"
 
-# msg = EmailMessage()
-# msg["Subject"] = "Test Email"
-# msg["From"] = sender_email
-# msg["To"] = recipient_email
-# msg.set_content("This is a test email sent via Gmail SMTP.")
+# # msg = EmailMessage()
+# # msg["Subject"] = "Test Email"
+# # msg["From"] = sender_email
+# # msg["To"] = recipient_email
+# # msg.set_content("This is a test email sent via Gmail SMTP.")
 
-# # Connect to Gmail SMTP server
-# with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
-#     server.login(sender_email, sender_password)
-#     server.send_message(msg)
+# # # Connect to Gmail SMTP server
+# # with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+# #     server.login(sender_email, sender_password)
+# #     server.send_message(msg)
 
-# print("Email sent successfully!")
+# # print("Email sent successfully!")
 
 
-# import smtplib
-# from email.message import EmailMessage
+# # import smtplib
+# # from email.message import EmailMessage
 
-# SMTP_SERVER = "smtp.gmail.com"
-# SMTP_PORT = 587
-# EMAIL_ADDRESS = "karanagg1001@gmail.com"
-# EMAIL_PASSWORD = "tjlldxzkqfxybtgz"
+# # SMTP_SERVER = "smtp.gmail.com"
+# # SMTP_PORT = 587
+# # EMAIL_ADDRESS = "karanagg1001@gmail.com"
+# # EMAIL_PASSWORD = "tjlldxzkqfxybtgz"
 
-# def send_email(subject, body):
-#     to_emails = ["karanagg2002@gmail.com"]
-#     cc_emails = ["kanikaagg2001@gmail.com","rushilagarwal08@gmail.com"]
+# # def send_email(subject, body):
+# #     to_emails = ["karanagg2002@gmail.com"]
+# #     cc_emails = ["kanikaagg2001@gmail.com","rushilagarwal08@gmail.com"]
 
-#     msg = EmailMessage()
-#     msg["From"] = EMAIL_ADDRESS
-#     msg["To"] = ", ".join(to_emails)
-#     msg["Cc"] = ", ".join(cc_emails)
-#     msg["Subject"] = subject
-#     msg.set_content(body)
+# #     msg = EmailMessage()
+# #     msg["From"] = EMAIL_ADDRESS
+# #     msg["To"] = ", ".join(to_emails)
+# #     msg["Cc"] = ", ".join(cc_emails)
+# #     msg["Subject"] = subject
+# #     msg.set_content(body)
 
-#     with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
-#         server.starttls()
-#         server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
-#         all_recipients = to_emails + cc_emails
-#         server.send_message(msg, to_addrs=all_recipients)
+# #     with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
+# #         server.starttls()
+# #         server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+# #         all_recipients = to_emails + cc_emails
+# #         server.send_message(msg, to_addrs=all_recipients)
 
-#     print("Email sent successfully!")
+# #     print("Email sent successfully!")
 
 
 
@@ -77,3 +77,34 @@ def send_email(subject, body):
         server.send_message(msg, to_addrs=all_recipients)
 
     print("Email sent successfully!")
+
+
+
+# import smtplib
+# from email.mime.text import MIMEText
+# from email.mime.multipart import MIMEMultipart
+
+
+# SMTP_SERVER = "bz.apple.com" 
+# SMTP_PORT = 25 
+
+# sender = "aggarwal_k@apple.com"
+# to_recipients = ["abhishek_s@apple.com"]
+# cc_recipients = []
+# all_recipients = to_recipients + cc_recipients
+
+# msg = MIMEMultipart()
+# msg["Subject"] = "Test email using SMTP Karan"
+# msg["From"]=sender
+# msg["To"] = ", ".join(to_recipients)  
+# msg["Cc"] = ", ".join(cc_recipients)
+
+
+# message_body='''This is a test email using SMTP server'''
+
+# msg.attach(MIMEText(message_body, "plain"))
+
+# with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
+#     server.sendmail(sender, all_recipients, msg.as_string())
+
+# print("Email sent successfully!")
